@@ -1,5 +1,9 @@
 # Housing Price Prediction Model Report
 
+## Guides
+[Running Docker Container](#10-running-the-docker-container)     
+[API Usage Guide](#11-api-usage-guide)
+
 ## 1. Introduction
 
 Aim of this project was to develop a predictive model for housing prices based on various features such as the number of rooms, population, income, and other related variables. The model's primary purpose is to predict the median house value for California districts, which is a regression problem. We have also created an API as well as a webpage where we feed data in `json` format and get the house price prediction. 
