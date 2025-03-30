@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Housing Price Prediction</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        h1 { color: #333; }
+        label { font-weight: bold; }
+        input[type="text"], textarea { width: 100%; padding: 8px; margin-bottom: 10px; }
+        button { padding: 10px 20px; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #45a049; }
+        .prediction { margin-top: 20px; padding: 15px; background-color: #f4f4f4; border-radius: 5px; }
+        .error { color: red; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Housing Price Prediction</h1>
+
+    <form id="predictionForm">
+        <label for="json_data">Enter Feature Data (in JSON format):</label><br>
+        <textarea id="json_data" name="json_data" rows="8" placeholder='{"MedInc": 8.3252, "HouseAge": 41.0, "AveRooms": 6.98, "AveBedrms": 1.02, "Population": 322.0, "AveOccup": 2.56, "Latitude": 37.88, "Longitude": -122.23}'>{{ json_data }}</textarea><br>
+
+        <button type="submit">Predict Price</button>
+    </form>
+
+    <div class="prediction" id="predictionResult" style="display:none;">
+        <h3>Predicted Price: <span id="price"></span></h3>
+    </div>
+
+    <div class="error" id="errorMessage" style="display:none;">
+        <p id="error"></p>
+    </div>
+
+    <script>
+        // When the form is submitted
+        document.getElementById("predictionForm").addEventListener("submit", function(event) {
+            event.preventDefault();  // Prevent the default form submission
+
+            // Get the JSON data from the textarea
+            var jsonData = document.getElementById("json_data").value;
+
+            // Send a POST request to the /predict route
+            fetch('/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(JSON.parse(jsonData))  // Send the data as JSON after parsing
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Always hide previous error and prediction results first
+                document.getElementById("errorMessage").style.display = 'none';
+                document.getElementById("predictionResult").style.display = 'none';
+
+                // Check if the backend response contains an error message
+                if (data.error) {
+                    // Display the error message from the backend
+                    document.getElementById("errorMessage").style.display = 'block';
+                    document.getElementById("error").textContent = data.error;  // Show the backend error
+                } else {
+                    // Display the predicted price
+                    document.getElementById("price").textContent = data.predicted_price;
+                    document.getElementById("predictionResult").style.display = 'block';
+                }
+            })
+            .catch(error => {
+                // If network error occurs, show the error message
+                document.getElementById("predictionResult").style.display = 'none';
+                document.getElementById("errorMessage").style.display = 'block';
+                document.getElementById("error").textContent = 'Network error: ' + error.message;
+            });
+        });
+    </script>
+</body>
+</html>

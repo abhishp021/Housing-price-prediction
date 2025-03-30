@@ -1,0 +1,57 @@
+2025-03-30 00:16:12,886 - ERROR - Missing or incorrect feature data.
+2025-03-30 00:22:43,525 - ERROR - Missing or incorrect feature data.
+2025-03-30 00:25:36,025 - ERROR - Missing or incorrect feature data.
+2025-03-30 00:25:44,379 - ERROR - Missing or incorrect feature data.
+2025-03-30 00:26:51,130 - ERROR - Missing or incorrect feature data.
+2025-03-30 00:27:02,701 - ERROR - Missing or incorrect feature data.
+2025-03-30 00:32:07,938 - ERROR - Missing or incorrect feature data.
+2025-03-30 00:32:32,913 - ERROR - Missing or incorrect feature data.
+2025-03-30 00:38:44,992 - ERROR - Missing or incorrect feature data.
+2025-03-30 00:57:38,167 - ERROR - Error occurred during prediction.
+Traceback (most recent call last):
+  File "C:\Users\user\personal projects\Assignment\app.py", line 72, in predict
+    return jsonify({"predicted_price": error_msg}), 400
+                                       ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'error_msg' where it is not associated with a value
+2025-03-30 00:59:25,465 - ERROR - Error occurred during prediction.
+Traceback (most recent call last):
+  File "C:\Users\user\personal projects\Assignment\app.py", line 72, in predict
+    return jsonify({"predicted_price": error_msg}), 400
+                                       ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'error_msg' where it is not associated with a value
+2025-03-30 04:40:59,907 - ERROR - Error occurred during prediction.
+Traceback (most recent call last):
+  File "C:\Users\user\personal projects\Assignment\app.py", line 81, in predict
+    scaled_df = feature_scaling(df)
+                ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\personal projects\Assignment\app.py", line 40, in feature_scaling
+    scaled_features = scaler.transform(df_features_to_scale)
+                      ^^^^^^^^^^^^^^^^
+AttributeError: 'numpy.ndarray' object has no attribute 'transform'. Did you mean: 'transpose'?
+2025-03-30 04:43:28,786 - ERROR - Error occurred during prediction.
+Traceback (most recent call last):
+  File "C:\Users\user\personal projects\Assignment\app.py", line 82, in predict
+    scaled_df = feature_scaling(df)
+                ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\personal projects\Assignment\app.py", line 41, in feature_scaling
+    scaled_features = scaler.transform(df_features_to_scale)
+                      ^^^^^^^^^^^^^^^^
+AttributeError: 'numpy.ndarray' object has no attribute 'transform'. Did you mean: 'transpose'?
+2025-03-30 05:00:08,958 - ERROR - Error occurred during prediction.
+Traceback (most recent call last):
+  File "C:\Users\user\personal projects\Assignment\app.py", line 89, in predict
+    scaled_df = feature_scaling(df)
+                ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\personal projects\Assignment\app.py", line 42, in feature_scaling
+    X_test_scaled = pd.DataFrame(scaler.transform(X_test_skewed), columns=X_test_skewed.columns, index=X_test_skewed.index)
+                                                  ^^^^^^^^^^^^^
+NameError: name 'X_test_skewed' is not defined
+2025-03-30 05:00:10,912 - ERROR - Error occurred during prediction.
+Traceback (most recent call last):
+  File "C:\Users\user\personal projects\Assignment\app.py", line 89, in predict
+    scaled_df = feature_scaling(df)
+                ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\personal projects\Assignment\app.py", line 42, in feature_scaling
+    X_test_scaled = pd.DataFrame(scaler.transform(X_test_skewed), columns=X_test_skewed.columns, index=X_test_skewed.index)
+                                                  ^^^^^^^^^^^^^
+NameError: name 'X_test_skewed' is not defined

@@ -1,0 +1,16 @@
+scaler,model,best_params,r2,rmse,mae,model_path,scaler_path
+minmax,linear_regression,"""default""",0.6529684009953847,0.6786940426927871,0.4964303285505173,models/model_linear_regression_minmax.pkl,scalers/scaler_linear_regression_minmax.pkl
+minmax,decision_tree,"{""max_depth"": 5}",0.5991458516914389,0.7294284827293903,0.5321302692201098,models/model_decision_tree_minmax.pkl,scalers/scaler_decision_tree_minmax.pkl
+minmax,random_forest,"{""max_depth"": null, ""n_estimators"": 100}",0.7694717830401017,0.5531610242149053,0.3780740252606062,models/model_random_forest_minmax.pkl,scalers/scaler_random_forest_minmax.pkl
+minmax,xgboost,"{""max_depth"": 6, ""n_estimators"": 100}",0.7946973512707342,0.5220195918109322,0.3541188430327448,models/model_xgboost_minmax.pkl,scalers/scaler_xgboost_minmax.pkl
+minmax,lightgbm,"{""learning_rate"": 0.1, ""max_depth"": 5, ""n_estimators"": 100, ""num_leaves"": 50}",0.8036934608145151,0.5104543507818039,0.3486459310027719,models/model_lightgbm_minmax.pkl,scalers/scaler_lightgbm_minmax.pkl
+standard,linear_regression,"""default""",0.6529684009953844,0.6786940426927874,0.4964303285505182,models/model_linear_regression_standard.pkl,scalers/scaler_linear_regression_standard.pkl
+standard,decision_tree,"{""max_depth"": 10}",0.6154767880353176,0.7144153991624973,0.4763169921137387,models/model_decision_tree_standard.pkl,scalers/scaler_decision_tree_standard.pkl
+standard,random_forest,"{""max_depth"": null, ""n_estimators"": 100}",0.7692524213063354,0.5534241449523036,0.3779946372121213,models/model_random_forest_standard.pkl,scalers/scaler_random_forest_standard.pkl
+standard,xgboost,"{""max_depth"": 6, ""n_estimators"": 100}",0.7946973512707342,0.5220195918109322,0.3541188430327448,models/model_xgboost_standard.pkl,scalers/scaler_xgboost_standard.pkl
+standard,lightgbm,"{""learning_rate"": 0.1, ""max_depth"": 5, ""n_estimators"": 100, ""num_leaves"": 50}",0.8019012206135174,0.512779230467992,0.35001858309792055,models/model_lightgbm_standard.pkl,scalers/scaler_lightgbm_standard.pkl
+log,linear_regression,"""default""",0.6536532441824787,0.6780240337780165,0.5080254184156985,models/model_linear_regression_log.pkl,scalers/scaler_linear_regression_log.pkl
+log,decision_tree,"{""max_depth"": 10}",0.6157965319467221,0.7141183072399148,0.47511354677948714,models/model_decision_tree_log.pkl,scalers/scaler_decision_tree_log.pkl
+log,random_forest,"{""max_depth"": null, ""n_estimators"": 100}",0.7699377378342771,0.5526017035174691,0.3765780054000002,models/model_random_forest_log.pkl,scalers/scaler_random_forest_log.pkl
+log,xgboost,"{""max_depth"": 6, ""n_estimators"": 100}",0.7946973512707342,0.5220195918109322,0.3541188430327448,models/model_xgboost_log.pkl,scalers/scaler_xgboost_log.pkl
+log,lightgbm,"{""learning_rate"": 0.1, ""max_depth"": 5, ""n_estimators"": 100, ""num_leaves"": 31}",0.804087454232295,0.5099418445049391,0.34837692973536705,models/model_lightgbm_log.pkl,scalers/scaler_lightgbm_log.pkl
